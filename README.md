@@ -1,4 +1,4 @@
-Background Geolocation for Android
+Background Geolocation for Android - Update 2022
 
 [![CircleCI](https://circleci.com/gh/mauron85/background-geolocation-android/tree/master.svg?style=shield)](https://circleci.com/gh/mauron85/background-geolocation-android/tree/master)
 
