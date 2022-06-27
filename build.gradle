@@ -3,7 +3,9 @@ apply plugin: 'com.android.library'
 apply from: './VERSIONS.gradle'
 def accountPrefix = getAccountPrefix()
 def resourcePrefix = getResourcePrefix()
-
+def getDate() {
+    return new Date().format('yyyyMMddHHmmss')
+}
 // https://hackernoon.com/android-how-to-add-gradle-dependencies-using-foreach-c4cbcc070458
 def projDependencies = [
     [configuration: "androidTestImplementation", dependency: androidLibs.supportAnnotations],
@@ -62,8 +64,8 @@ android {
 
     defaultConfig {
         resValue "string", resourcePrefix + "account_name", 'Locations'
-        resValue "string", resourcePrefix + "account_type", accountPrefix + '.account'
-        resValue "string", resourcePrefix + "content_authority", accountPrefix + '.provider'
+        resValue "string", resourcePrefix + "account_type", applicationId + getDate() + '.mauron85.bgloc.account'
+        resValue "string", resourcePrefix + "content_authority", applicationId + getDate() + '.mauron85.bgloc.provider'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         minSdkVersion project.ext.getMinSdkVersion()
         versionCode 1
